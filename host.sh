@@ -2,6 +2,14 @@
 
 ###### Example: ./host.sh 10.10.10.10 ######
 
+exiting() {
+     echo
+     echo "[!] Exiting....."
+     exit 130 	
+}
+
+trap exiting SIGINT
+
 ip="$1"
 
 host="${ip%.*}"
